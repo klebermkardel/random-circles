@@ -38,6 +38,8 @@ function App() {
   }
 
   return (
+    <>
+    <button>Desfazer</button>
     <div className='App' onClick={getCoordinates}>
       {clickedPoints.map((clickedPoint, index) => (
         <div
@@ -55,6 +57,7 @@ function App() {
         ></div>
       ))}
     </div>
+    </>
   );
 }
 
