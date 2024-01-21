@@ -23,6 +23,8 @@ function getRandomSize(): number {
 
 function App() {
   const [clickedPoints, setClickedPoints] = useState<ClickedProps[]>([]);
+  const [undoPoints, setUndoPoints] = useState<ClickedProps[]>([]);
+
 
   function getCoordinates(e: React.MouseEvent<HTMLElement>) {
     const { clientX, clientY } = e;
@@ -39,13 +41,24 @@ function App() {
 
   function handleUndo() {
     const newClickedPoint = [...clickedPoints]
-    newClickedPoint.pop()
+    const undoPoint = newClickedPoint.pop()
+    if(!undoPoint) return
     setClickedPoints(newClickedPoint)
+    setUndoPoints([...undoPoints, undoPoint])
+  }
+
+  function handleRedo() {
+    const newUndoPoints = [...undoPoints]
+    const redoPoint = newUndoPoints.pop()
+    if(!redoPoint) return
+    setUndoPoints(newUndoPoints)
+    setClickedPoints([...clickedPoints, redoPoint])
   }
 
   return (
     <>
     <button disabled={clickedPoints.length === 0} onClick={handleUndo}>Desfazer</button>
+    <button disabled={undoPoints.length === 0} onClick={handleRedo}>Refazer</button>
     <div className='App' onClick={getCoordinates}>
       {clickedPoints.map((clickedPoint, index) => (
         <div
