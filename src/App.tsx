@@ -1,8 +1,18 @@
+import React, { useState } from 'react'
 import './App.css'
 
+interface ClickedProps {
+  clientX: number
+  clientY: number
+}
+
 function App() {
+  const [clickedPoints, setClickedPoints] = useState<ClickedProps[]>([])
+
   function getCoordinates(e: React.MouseEvent<HTMLElement>) {
-    console.log(e)
+    const { clientX, clientY } = e
+
+    setClickedPoints([...clickedPoints, { clientX, clientY }])
   }
 
   return <div className='App' onClick={getCoordinates}></div>
