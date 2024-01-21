@@ -1,30 +1,56 @@
-# React + TypeScript + Vite
+# Projeto de Bolinhas Interativas
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto de case real de entrevista onde foi solicitado a construção de uma aplicação Web usando React que a cada clique seja inserido um círculo na posição exata do clique.
 
-Currently, two official plugins are available:
+Foi solicitado também um botão de desfazer que irá remover o último círculo adicionado e um de refazer que irá readicionar o último círculo removido.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Funcionalidades
 
-## Expanding the ESLint configuration
+- **Adicionar Bolinhas:** Ao clicar na tela, bolinhas coloridas serão adicionadas na posição do clique com tamanhos aleatórios.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Desfazer e Refazer:** Utilize os botões "Desfazer" e "Refazer" para gerenciar as ações realizadas, permitindo retroceder ou avançar nas interações.
 
-- Configure the top-level `parserOptions` property like this:
+## Tecnologias Utilizadas
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+- **React com TypeScript:** Biblioteca JavaScript para construção de interfaces de usuário com tipagem estática.
+- **HTML/CSS:** Estruturação e estilização da aplicação.
+- **Node.js:** Ambiente de execução para JavaScript fora do navegador.
+- **Git:** Sistema de controle de versão para rastreamento de alterações no código.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Como Executar
+
+1. Certifique-se de ter o [Node.js](https://nodejs.org/) instalado em sua máquina.
+
+2. Clone este repositório:
+
+    ```bash
+    git clone https://github.com/seu-usuario/random-circles.git
+    ```
+
+3. Navegue até o diretório do projeto:
+
+    ```bash
+    cd random-circles
+    ```
+
+4. Instale as dependências:
+
+    ```bash
+    npm install
+    ```
+
+5. Execute o aplicativo:
+
+    ```bash
+    npm run dev
+    ```
+
+6. Abra o navegador e acesse [http://localhost:5173](http://localhost:5173) para visualizar o projeto.
+
+## Contribuições
+
+Contribuições são bem-vindas! Se você tiver sugestões, correções ou melhorias, sinta-se à vontade para abrir uma issue ou enviar um pull request.
+
+## Licença
+
+Este projeto está licenciado sob a [Licença MIT](LICENSE), o que significa que você pode usá-lo livremente, inclusive para fins comerciais.
