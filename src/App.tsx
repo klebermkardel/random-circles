@@ -45,7 +45,7 @@ function App() {
 
   return (
     <>
-    <button onClick={handleUndo}>Desfazer</button>
+    <button disabled={clickedPoints.length === 0} onClick={handleUndo}>Desfazer</button>
     <div className='App' onClick={getCoordinates}>
       {clickedPoints.map((clickedPoint, index) => (
         <div
