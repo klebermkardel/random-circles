@@ -16,8 +16,16 @@ function App() {
   }
 
   return <div className='App' onClick={getCoordinates}>
-    {clickedPoints.map(() => {
-      return <div className='circlePoint'>0</div>
+    {clickedPoints.map((clickedPoint) => {
+      return <div style={{
+        left: clickedPoint.clientX - 7, 
+        top: clickedPoint.clientY - 7,
+        position: 'absolute',
+        borderRadius: '50%',
+        background: 'blue',
+        width: '20px',
+        height: '20px'}}
+        ></div>
     })}
   </div>
 }
