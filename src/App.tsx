@@ -15,7 +15,11 @@ function App() {
     setClickedPoints([...clickedPoints, { clientX, clientY }])
   }
 
-  return <div className='App' onClick={getCoordinates}></div>
+  return <div className='App' onClick={getCoordinates}>
+    {clickedPoints.map(() => {
+      return <div className='circlePoint'>0</div>
+    })}
+  </div>
 }
 
 export default App
