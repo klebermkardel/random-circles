@@ -37,9 +37,15 @@ function App() {
     setClickedPoints([...clickedPoints, newClickedPoint]);
   }
 
+  function handleUndo() {
+    const newClickedPoint = [...clickedPoints]
+    newClickedPoint.pop()
+    setClickedPoints(newClickedPoint)
+  }
+
   return (
     <>
-    <button>Desfazer</button>
+    <button onClick={handleUndo}>Desfazer</button>
     <div className='App' onClick={getCoordinates}>
       {clickedPoints.map((clickedPoint, index) => (
         <div
